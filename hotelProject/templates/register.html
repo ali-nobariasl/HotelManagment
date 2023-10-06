@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+
+{%  block content %}
+            <form class="mb-3" action="" method="POST" >
+                
+                <br>
+                {% csrf_token %}
+                {{ form.as_p }}
+        
+                <input class="btn btn-primary" role="button"  type="submit" value="Register" />  
+            </form>
+{% endblock %}
+
+

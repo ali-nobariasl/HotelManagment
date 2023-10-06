@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+
+{%  block content %}
+
+        <h1>Guest Profile</h1>
+        <p>This is your Profile:</p>
+
+        <div class="container">
+            <div class="row">
+                <form method="POST" action="{% url 'registerGuest' %}">
+                    {% csrf_token %}
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="field-holder">
+                            <label>First name</label> {{form.name}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="field-holder">
+                            <label>last name</label> {{form.lastname}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="field-holder">
+                            <label>Email</label> {{form.email}}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="field-holder">
+                            <label>Birth date</label> {{form.birth_date}}
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" role="button"  type="submit" value="Submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <br>
+        <a class="btn btn-primary" role="button"  href="{% url 'roomList' %}"> Room list   </a>  / 
+        <a class="btn btn-primary" role="button"  href="{% url 'bookList' %}"> Book List  </a>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>Book Detail </h1>
+    <p>Please add your favourite service:</p>
+
+    <form method="post" action="{% url 'addBenefit' book.pk %}">
+        {% csrf_token %}
+        Checkin date: {{book.checkin_date}} <br/>
+        Checkout date: {{book.checkout_date}} <br/>
+        Room: {{book.room}} <br/>
+        Benefit: {{form.benefit}} <br/>
+        ....................  <br/>
+
+        <button class="btn btn-primary" role="button"  type="submit">Submit</button>
+        
+    </form>
+{% endblock %}

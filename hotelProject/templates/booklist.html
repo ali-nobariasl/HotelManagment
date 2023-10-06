@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h1>Books</h1>
+    <p>These are our current Books:</p>
+
+    {% for book in books %}
+        Checkin date: {{book.checkin_date}} <br/>
+        Checkout date: {{book.checkout_date}} <br/>
+        Room: {{book.room}} <br/>
+        Benefit: {{book.benefit}} <br/>
+
+
+        {{book}} <br/><br/>
+        <a class="btn btn-primary" role="button" href="{% url 'addBenefit' book.pk %}">Add Benefit</a> /
+        <a class="btn btn-primary" role="button" href="{% url 'deletebook' book.pk %}">Cancel Booking</a> <br/>
+        ....................  <br/>
+        
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+
+{%  block content %}
+        <h1>Room List</h1>
+        <p>These are our current rooms:</p>
+
+        {% for room in rooms %}
+            Room Number: {{room.roomnumber}} <br/>
+            Capacity: {{room.capacity}} <br/>
+            Bednumber: {{room.bednumber}} <br/>
+            Price: {{room.price}} <br/>
+            ....................  <br/>
+        {% endfor %}
+
+{% endblock %}
